@@ -7,9 +7,9 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class MovieResult implements Parcelable {
-    @SerializedName("poster_path")
+    @SerializedName("poster")
     @Expose
-    private String poster_path;
+    private String poster;
     @SerializedName("original_title")
     @Expose
     private String original_title;
@@ -26,12 +26,12 @@ public class MovieResult implements Parcelable {
     public MovieResult() {
     }
 
-    public String getPoster_path() {
-        return poster_path;
+    public String getPoster() {
+        return poster;
     }
 
     public void setPoster_path(String poster_path) {
-        this.poster_path = poster_path;
+        this.poster = poster_path;
     }
 
     public String getOriginal_title() {
@@ -74,7 +74,7 @@ public class MovieResult implements Parcelable {
 
 
     protected MovieResult(Parcel in) {
-        poster_path = in.readString();
+        poster = in.readString();
         original_title = in.readString();
         date = in.readString();
         overview = in.readString();
@@ -100,7 +100,7 @@ public class MovieResult implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(poster_path);
+        dest.writeString(poster);
         dest.writeString(original_title);
         dest.writeString(date);
         dest.writeString(overview);
