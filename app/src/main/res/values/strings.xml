@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Movie</string>
+    <string name="todo">todo</string>
+    <string name="movie">MOVIE</string>
+    <string name="title_movie">Title Movie</string>
+    <string name="language">language</string>
+    <string name="release_date">Release date</string>
+</resources>
