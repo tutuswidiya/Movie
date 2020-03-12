@@ -9,11 +9,26 @@ public class MovieRequest {
     @SerializedName("results")
     @Expose
     private List<MovieResult> results;
+    @SerializedName("page")
+    @Expose
+    private List<MovieResult> page;
 
     public MovieRequest() {
     }
 
+
+    public List<MovieResult> getPage() {
+
+        return page;
+    }
+
+    public void setPage(List<MovieResult> page) {
+        this.page = page;
+    }
+
+
     public List<MovieResult> getResults() {
+
         return results;
     }
 
