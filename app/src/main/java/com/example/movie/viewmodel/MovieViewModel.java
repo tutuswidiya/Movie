@@ -20,9 +20,9 @@ public class MovieViewModel extends ViewModel {
 
     private MutableLiveData<MovieRequest> liveDataMovie = new MutableLiveData<>();
 
-    public void setMovie(String language, String sort, String adult, String video, String page){
+    public void setMovie(String language){
         ApiService mApiService = UtilsApi.getApiService();
-        Call<MovieRequest> call = mApiService.getMovieList(language, sort, adult, video, page, API_TOKEN);
+        Call<MovieRequest> call = mApiService.getMovieList(API_TOKEN, language );
         call.enqueue(new Callback<MovieRequest>() {
             @Override
             public void onResponse(Call<MovieRequest> call, Response<MovieRequest> response) {

@@ -24,17 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private MovieAdapter adapter;
     private RecyclerView recyclerView;
     private MovieViewModel movieViewModel;
-
     private static  final  String LANGUAGE = "en-US";
-    private static  final  String SORT = "popularity.desc";
-    private static  final  String ADULT = "false";
-    private static  final  String VIDEO = "false";
-    private static  final  String PAGE = "1";
-
     private ProgressBar progressBar;
-    private MovieViewModel movieViewModel;
-    private  static final String SOURCES = "google-news";
     private ArrayList<MovieResult> results = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,31 +36,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_movie);
 
         movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
-        movieViewModel.setMovie(LANGUAGE, SORT, ADULT, VIDEO, PAGE);
+        movieViewModel.setMovie(LANGUAGE);
         movieViewModel.getMovie().observe(this, movieRequest -> {
             List<MovieResult> list = movieRequest.getResults();
             results.addAll(list);
             adapter.notifyDataSetChanged();
 
         });
-        setupRecyclerView();
-    }
-
-    private void setupRecyclerView(){
-        recyclerView = findViewById(R.id.rv_view);
-        progressBar = findViewById(R.id.progressbar);
-
-        movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
-        movieViewModel.setMovies(SOURCES);
-        movieViewModel.getMovies().observe(this, newRequest -> {
-            List<MovieResult> list = newRequest.getResults();
-            results.addAll(list);
-            adapter.no();
-        });
-
         setupRecyclerciew();
     }
-
     private void setupRecyclerciew(){
         if (adapter == null){
             adapter = new MovieAdapter(MainActivity.this, results);

@@ -59,7 +59,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return arrayList.size();
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder{
+    public class MovieViewHolder extends RecyclerView.ViewHolder {
         CardView cvMovie;
         TextView tvTitle, tvDate, tvLanguage;
         ImageView ivPoster;
@@ -70,8 +70,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             cvMovie = itemView.findViewById(R.id.cv_movie);
             tvTitle = itemView.findViewById(R.id.tv_original_title);
             tvLanguage = itemView.findViewById(R.id.tv_original_language);
-            tvDate= itemView.findViewById(R.id.tv_release_date);
+            tvDate = itemView.findViewById(R.id.tv_release_date);
             ivPoster = itemView.findViewById(R.id.iv_poster);
 
         }
     }
+}

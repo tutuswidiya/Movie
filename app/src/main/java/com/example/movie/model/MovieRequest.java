@@ -12,9 +12,7 @@ public class MovieRequest {
     @SerializedName("results")
     @Expose
     private List<MovieResult> results;
-    @SerializedName("page")
-    @Expose
-    private List<MovieResult> page;
+
 
     public MovieRequest() {
     }
