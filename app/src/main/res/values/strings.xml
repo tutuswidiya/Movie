@@ -5,4 +5,5 @@
     <string name="title_movie">Title Movie</string>
     <string name="language">language</string>
     <string name="release_date">Release date</string>
+    <string name="Overview">overview</string>
 </resources>
