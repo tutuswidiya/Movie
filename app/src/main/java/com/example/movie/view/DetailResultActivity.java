@@ -20,6 +20,7 @@ public class DetailResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_result);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initContent();
 
         MovieResult result = getIntent().getParcelableExtra(EXTRA_RESULT);

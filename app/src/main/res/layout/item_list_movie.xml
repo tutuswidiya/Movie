@@ -11,10 +11,15 @@
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/img_wallpaper"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="5dp">
 
         <ImageView
             android:id="@+id/iv_poster"
@@ -23,7 +28,7 @@
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/todo"
             android:scaleType="fitXY"
-            android:src="@drawable/img_placeholder" />
+            android:src="@drawable/img_placeholder"/>
 
         <TextView
             android:id="@+id/tv_original_title"
@@ -37,7 +42,8 @@
             android:text="@string/title_movie"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingLeft="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -46,26 +52,27 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_release_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mlight"
+                android:text="@string/release_date"
+                android:paddingLeft="5dp"/>
 
             <TextView
                 android:id="@+id/tv_original_language"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:fontFamily="@font/mmedium"
                 android:maxLines="1"
                 android:text="@string/language"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tv_release_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/mmedium"
-                android:text="@string/release_date" />
-
+                android:textStyle="bold"
+                android:paddingLeft="5dp"/>
 
         </LinearLayout>
 

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="18dp"
+    android:background="@drawable/img_wallpaper"
     tools:context=".view.MainActivity">
 
     <ProgressBar
