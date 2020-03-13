@@ -23,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
     private MovieAdapter adapter;
     private RecyclerView recyclerView;
+    private MovieViewModel movieViewModel;
+
+    private static  final  String LANGUAGE = "en-US";
+    private static  final  String SORT = "popularity.desc";
+    private static  final  String ADULT = "false";
+    private static  final  String VIDEO = "false";
+    private static  final  String PAGE = "1";
+
     private ProgressBar progressBar;
     private MovieViewModel movieViewModel;
     private  static final String SOURCES = "google-news";
@@ -32,6 +40,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        recyclerView = findViewById(R.id.rv_movie);
+
+        movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
+        movieViewModel.setMovie(LANGUAGE, SORT, ADULT, VIDEO, PAGE);
+        movieViewModel.getMovie().observe(this, movieRequest -> {
+            List<MovieResult> list = movieRequest.getResults();
+            results.addAll(list);
+            adapter.notifyDataSetChanged();
+
+        });
+        setupRecyclerView();
+    }
+
+    private void setupRecyclerView(){
         recyclerView = findViewById(R.id.rv_view);
         progressBar = findViewById(R.id.progressbar);
 
