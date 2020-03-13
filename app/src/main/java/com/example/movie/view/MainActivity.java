@@ -17,15 +17,12 @@ import com.example.movie.viewmodel.MovieViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.transform.Source;
 
 public class MainActivity extends AppCompatActivity {
 
     private MovieAdapter adapter;
     private RecyclerView recyclerView;
-    private MovieViewModel movieViewModel;
     private static  final  String LANGUAGE = "en-US";
-    private ProgressBar progressBar;
     private ArrayList<MovieResult> results = new ArrayList<>();
 
 
@@ -34,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rv_movie);
+        ProgressBar progressBar = findViewById(R.id.progressbar);
 
-        movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
+        MovieViewModel movieViewModel = ViewModelProviders.of(this).get(MovieViewModel.class);
         movieViewModel.setMovie(LANGUAGE);
         movieViewModel.getMovie().observe(this, movieRequest -> {
             List<MovieResult> list = movieRequest.getResults();

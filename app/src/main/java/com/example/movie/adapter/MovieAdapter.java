@@ -59,7 +59,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return arrayList.size();
     }
 
-    public class MovieViewHolder extends RecyclerView.ViewHolder {
+    static class MovieViewHolder extends RecyclerView.ViewHolder {
         CardView cvMovie;
         TextView tvTitle, tvDate, tvLanguage;
         ImageView ivPoster;
