@@ -2,21 +2,21 @@ package com.example.movie.view;
 
 import android.view.View;
 
-public class CustomOnItemClickCallback implements View.OnClickListener {
+public class CustomOnItemClickListener implements View.OnClickListener {
     private int position;
     private OnItemClickCallback onItemClickCallback;
 
-    public CustomOnItemClickCallback(int position, OnItemClickCallback onItemClickCallback) {
+    public CustomOnItemClickListener(int position, OnItemClickCallback onItemClickCallback) {
         this.position = position;
         this.onItemClickCallback = onItemClickCallback;
     }
 
     @Override
     public void onClick(View view) {
-        onItemClickCallback.onItemClicked(view, position);
+        onItemClickCallback.onItemClickCallback(view, position);
     }
 
     public interface OnItemClickCallback {
-        void onItemClicked(View view, int position);
+        void onItemClickCallback(View view, int position);
     }
 }

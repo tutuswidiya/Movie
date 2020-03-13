@@ -19,8 +19,8 @@
         <ImageView
             android:id="@+id/iv_poster"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="61dp"
+            android:layout_height="403dp"
+            android:layout_marginBottom="20dp"
             android:contentDescription="@string/todo"
             android:scaleType="fitXY"
             android:src="@drawable/img_placeholder" />
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
-                android:fontFamily="@font/mregular"
+                android:fontFamily="@font/mmedium"
                 android:maxLines="1"
                 android:text="@string/language"
                 android:textStyle="bold" />
@@ -63,7 +63,7 @@
                 android:id="@+id/tv_release_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/mlight"
+                android:fontFamily="@font/mmedium"
                 android:text="@string/release_date" />
 
 
